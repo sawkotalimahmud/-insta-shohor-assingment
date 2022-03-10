@@ -15,6 +15,8 @@ const isLiked = (id) => {
   return likedPostsId?.length && !!likedPostsId.includes(id);
 };
 
+
+// First Bug Fixed 
 const addToLiked = (id) => {
   likedPostsId.push(id);
   showPosts(posts);
