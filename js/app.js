@@ -24,6 +24,7 @@ const addToLiked = (id) => {
 
 const reportPost = (id) => {
   reportedPostsId.push(id);
+  console.log(reportedPostsId);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
 };
@@ -41,6 +42,7 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
+
   } else if (id === "liked") {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
@@ -125,9 +127,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].user}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0].text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
