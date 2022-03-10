@@ -28,8 +28,9 @@ const reportPost = (id) => {
   showPosts(remainingPosts);
 };
 
+// Description Bug Fixed 
 const displayContent = (text) => {
-  return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  return text.length <= 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -64,9 +65,6 @@ const createPost = (post) => {
                     target="_blank"
                     class="post__avatar"
                   >
-
-                  // User Image Bug Fixed //
-                  
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
