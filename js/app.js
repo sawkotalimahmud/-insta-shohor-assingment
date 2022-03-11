@@ -151,9 +151,15 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  const likedElement = document.getElementById("liked");
+  likedElement.innerHTML = '';
+  const header = document.createElement("h1");
+  header.textContent = "Liked Posts";
+  likedElement.appendChild(header);
+
   likedPosts.forEach((post) => {
     const div = createPost(post);
-    document.getElementById("liked").appendChild(div);
+    likedElement.appendChild(div);
   });
 };
 
